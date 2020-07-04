@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
-import {sendData,loadData} from "../utils/axios"
+import {loadData} from "../utils/axios"
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -13,13 +13,11 @@ export default class TodoApp extends Component {
 		this.state = {
 			todos: [],
            itemValue: "",
-           isError:false
 		};
   }
   componentDidMount(){
 	  loadData().then(res=>res.data)
 	  .then(res=>this.setState({todos:[...res]}))
-	  .catch(err=>this.setState({isError:true}))
   }
   handleChange  =  (e)=>{
 	  this.setState({itemValue:e.target.value})
@@ -53,7 +51,6 @@ export default class TodoApp extends Component {
 				<div className="container-fluid text-center">
 					<header className="p-2">
 						<h1>Tasks</h1>
-           {this.state.isError && <p className = "error" >Something went wrong</p> } 
 						<TaskForm
 							onSubmit={this.handleSubmit}
 							onChange={this.handleChange}

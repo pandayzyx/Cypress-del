@@ -9,6 +9,7 @@ const TaskItem = props =>{
             {props.data.title}
           </label>
           <button onClick = {()=>props.delfunc(props.data.id)} className ="del-item">Delete</button>
+          <button onClick = {()=>props.delfunc(props.data.id)} id={props.data.id} className ="remove-item">Remove</button>
         </div>
       </li>
       )
