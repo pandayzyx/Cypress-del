@@ -1,0 +1,24 @@
+name: "Automation Testing"
+# # on: workflow_dispatch
+# on: [push]
+# We'll enable it later
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '30 8,19 * * *'
+jobs:
+  cypress-run:
+    name: Cypress run
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          browser: chrome
+          headless: true
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          record: true
+          spec: cypress/integration/**/*.spec.js
