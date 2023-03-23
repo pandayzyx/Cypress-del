@@ -1,14 +1,30 @@
 // ***********************************************************
-// Import commands.js using ES2015 syntax:
-//import './commands'
 // This example support/index.js is processed and
 // loaded automatically before your test files.
 //
 // This is a great place to put global configuration and
 // behavior that modifies Cypress.
+//
+// You can change the location of this file or turn off
+// automatically serving support files with the
+// 'supportFile' configuration option.
 
+// Import commands.js using ES2015 syntax:
+//import './commands'
+//
+// You can read more here:
+// https://on.cypress.io/configuration
+// ***********************************************************
 // You can read more here:
 // https://on.cypress.io/configuration
 // ***********************************************************
 
+// Import commands.js using ES2015 syntax:
+//import './commands'
 
+// Alternatively you can use CommonJS syntax:
+// require('./commands')
+
+// You can read more here:
+// https://on.cypress.io/configuration
+// ***********************************************************
